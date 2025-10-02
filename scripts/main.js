@@ -75,6 +75,7 @@ function App(){
             <div id="banner"></div>
             <div id="typing"></div>
             <div id="features"></div>
+            <div id="how_it_works"></div>
             <div id="faq"></div>
             <div id="footer"></div>
         </div>
@@ -82,6 +83,9 @@ function App(){
     Navbar();
     Banner();
     Features();
+    HowItWorks();
+    FAQ();
+    Footer();
 }
 
 function Navbar(){
@@ -111,6 +115,7 @@ function Navbar(){
             <nav class="hidden md:flex items-center gap-6 text-sm text-slate-300">
               <a class="hover:text-white" href="#practice">Practice</a>
               <a class="hover:text-white" href="#features">Features</a>
+              <a class="hover:text-white" href="#how_it_works">How it works</a>
               <a class="hover:text-white" href="#faq">FAQ</a>
               <a class="hover:text-white" href="leaderboard.html">Leaderboard</a>
             </nav>
@@ -179,6 +184,72 @@ function Features() {
           </div>
         </div>
       </section>
+    `;
+}
+
+function HowItWorks() {
+    const steps = [
+      "Click Start or begin typing to start the 60 second timer.",
+      "Type the text shown. Correct characters increase WPM, mistakes lower accuracy.",
+      "When time runs out, your results pop up. Reset to try again."
+    ]
+  
+    const stepsHTML = steps.map(step => {
+        return `<li>${step}</li>`
+    }).join('');
+  
+    const howItWorks = document.getElementById('how_it_works');
+    howItWorks.innerHTML = `
+      <section id="how" class="py-14">
+        <div class="flex flex-col items-center px-4">
+          <h2 class="text-3xl font-bold mb-4 text-white">How it works</h2>
+          <ol class="list-decimal pl-5 space-y-3 text-slate-300">
+            ${stepsHTML}
+          </ol>
+        </div>
+      </section>
+    `;
+}
+
+  function FAQ() {
+    const faqs = [
+      {que: "What is WPM?",ans: "Words per minute. We use 5 characters as one word for calculation."},
+      {que: "How is accuracy calculated?",ans: "Correct characters divided by total typed characters."},
+      {que: "Why endless text?",ans: "To keep you in flow without interruptions or page reloads."},
+      {que: "Can I use my own text?",ans: "No currently there is no way to do so."},
+    ]
+  
+    const faqHTML = faqs.map((item) => {
+        return `
+            <div class="p-5 rounded-xl bg-slate-800">
+                <div class="font-medium mb-1 text-white">${item.que}</div>
+                <div class="text-sm text-slate-400">${item.ans}</div>
+            </div>
+        `;
+    }).join('');
+  
+    const faq = document.getElementById('faq');
+    faq.innerHTML = `
+      <section id="faq" class="py-14 bg-slate-900/50">
+        <div class="max-w-6xl mx-auto px-4">
+          <h2 class="text-3xl font-bold mb-6 text-white">FAQ</h2>
+          <div class="grid md:grid-cols-2 gap-6">
+            ${faqHTML}
+          </div>
+        </div>
+      </section>
+    `;
+  }
+
+  function Footer(){
+    const year = new Date().getFullYear();
+    const footer = document.getElementById('footer');
+    footer.innerHTML = `
+      <footer class="mt-16 border-t border-slate-800">
+        <div class="px-4 py-8 text-sm text-slate-400 flex flex-col md:flex-row items-center justify-between gap-3">
+          <div>© ${year} Anmol Tuteja</div>
+        </div>
+      </footer>
     `;
 }
 
