@@ -4,41 +4,41 @@ let topUsers = [];
 
 function renderLeaderboard() {
         leaderboardRoot.innerHTML = `
-            <div class="min-h-[100vh] bg-slate-900 text-slate-100">
-                <header class="bg-slate-900/70 border-b border-slate-800">
+            <div class="min-h-[100vh] bg-gradient-to-b from-[#3f4043] to-[#333437] text-white">
+                <header class="bg-[#333437] border-b border-slate-800">
                     <div class="px-4 py-3 flex items-center justify-between">
-                        <a href="index.html" class="text-lg font-semibold text-white">nanoType</a>
+                        <a href="index.html" class="text-lg font-semibold text-[#E2B715]">nanoType</a>
                         <div class="flex items-center gap-4">
-                            <a href="profile.html" class="text-slate-400 hover:text-white">Profile</a>
+                            <a href="profile.html" class="text-[#E2B715] hover:text-[#E2B715]">Profile</a>
                         </div>
                     </div>
                 </header>
     
                 <div class="max-w-4xl mx-auto px-4 py-8">
                     <div class="text-center mb-8">
-                        <h1 class="text-4xl font-bold text-white mb-4">Leaderboard</h1>
+                        <h1 class="text-4xl font-bold text-[#E2B715] mb-4">Leaderboard</h1>
                     </div>
                     
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-                        <div class="bg-slate-800 rounded-xl p-6 shadow-sm border border-slate-700 text-center">
+                        <div class="bg-[#2B2E30] rounded-xl p-6 shadow-sm border border-slate-700 text-center">
                             <div class="text-3xl font-bold text-white" id="total-users">-</div>
-                            <div class="text-slate-400">Total Users</div>
+                            <div class="text-[#E2B715]">Total Users</div>
                         </div>
-                        <div class="bg-slate-800 rounded-xl p-6 shadow-sm border border-slate-700 text-center">
+                        <div class="bg-[#2B2E30] rounded-xl p-6 shadow-sm border border-slate-700 text-center">
                             <div class="text-3xl font-bold text-white" id="total-sessions">-</div>
-                            <div class="text-slate-400">Total Typing Sessions</div>
+                            <div class="text-[#E2B715]">Total Typing Sessions</div>
                         </div>
-                        <div class="bg-slate-800 rounded-xl p-6 shadow-sm border border-slate-700 text-center">
+                        <div class="bg-[#2B2E30] rounded-xl p-6 shadow-sm border border-slate-700 text-center">
                             <div class="text-3xl font-bold text-white" id="best-wpm">-</div>
-                            <div class="text-slate-400">Best WPM</div>
+                            <div class="text-[#E2B715]">Best WPM</div>
                         </div>
                     </div>
                     
                     <div id="leaderboard-content">
-                        <div class="bg-slate-800 rounded-2xl shadow-xl">
+                        <div class="bg-[#2B2E30] rounded-2xl shadow-xl">
                             <div class="p-6">
-                                <h2 class="text-2xl font-bold text-white">Leaderboard</h2>
-                                <p class="text-slate-400">(by wpm)</p>
+                                <h2 class="text-2xl font-bold text-[#D1D0C5]">Leaderboard</h2>
+                                <p class="text-[#D1D0C5]">(by wpm)</p>
                             </div>
                             <div class="p-6">
                                 <div id="leaderboard-list"></div>
@@ -114,23 +114,23 @@ function renderLeaderboardContent() {
                             class="w-10 h-10 rounded-full"
                         />
                         <div>
-                            <div class="font-semibold text-white">${user.username}</div>
-                            <div class="text-sm text-slate-400">${user.email}</div>
+                            <div class="font-semibold text-[#D1D0C5]">${user.username}</div>
+                            <div class="text-sm text-[#E2B715]">${user.email}</div>
                         </div>
                     </div>
                     
                     <div class="flex items-center gap-6">
                         <div class="text-center">
-                            <div class="text-lg font-bold text-white">${Math.round(user.wpm)}</div>
-                            <div class="text-xs text-slate-400">WPM</div>
+                            <div class="text-lg font-bold text-[#D1D0C5]">${Math.round(user.wpm)}</div>
+                            <div class="text-xs text-[#E2B715]">WPM</div>
                         </div>
                         <div class="text-center">
-                            <div class="text-lg font-semibold text-white">${user.accuracy.toFixed(1)}%</div>
-                            <div class="text-xs text-slate-400">Accuracy</div>
+                            <div class="text-lg font-semibold text-[#D1D0C5]">${user.accuracy.toFixed(1)}%</div>
+                            <div class="text-xs text-[#E2B715]">Accuracy</div>
                         </div>
                         <div class="text-center">
-                            <div class="text-lg font-bold text-white">${rank}</div>
-                            <div class="text-xs text-slate-400">Rank</div>
+                            <div class="text-lg font-bold text-[#D1D0C5]">${rank}</div>
+                            <div class="text-xs text-[#E2B715]">Rank</div>
                         </div>
                     </div>
                 </div>

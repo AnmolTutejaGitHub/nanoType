@@ -79,7 +79,7 @@ class NanoType {
 
 function App(){
     root.innerHTML = `
-        <div class="min-h-screen bg-slate-900 text-slate-100">
+        <div class="min-h-screen bg-[#333437] text-[#E2B715]">
             <div id="navbar"></div>
             <div id="banner"></div>
             <div id="typing"></div>
@@ -104,30 +104,30 @@ function Navbar(){
 
     const userNav = username ? 
     `<div class="flex items-center gap-3">
-             <a href="profile.html" class="flex items-center gap-2 pl-3 pr-3 pt-2 pb-2 text-sm rounded-md text-slate-200">
+             <a href="profile.html" class="flex items-center gap-2 pl-3 pr-3 pt-2 pb-2 text-sm rounded-md text-[#E2B715]">
                <img src="https://api.dicebear.com/9.x/bottts/svg?seed=${username}" 
                     class="w-8 h-8 rounded-full border border-slate-700"
                 />
                <span>${username}</span>
              </a>
-             <button id="logout-btn" class="pl-3 pr-3 pt-2 pb-2 text-sm rounded-md bg-sky-600 text-white hover:bg-sky-700">Logout</button>
+             <button id="logout-btn" class="pl-3 pr-3 pt-2 pb-2 text-sm rounded-md bg-[#D1D0C5] text-black hover:bg-[#E2B715]/70">Logout</button>
            </div>`
         : `<div class="flex items-center gap-3">
-             <a href="login.html" class="pl-3 pr-3 pt-2 pb-2 text-sm rounded-md bg-sky-600 text-white hover:bg-sky-700">Login</a>
-             <a href="signup.html" class="pl-3 pr-3 pt-2 pb-2 text-sm rounded-md border border-slate-700 hover:bg-slate-800">Sign Up</a>
+             <a href="login.html" class="pl-3 pr-3 pt-2 pb-2 text-sm rounded-md bg-[#D1D0C5] text-[black] hover:bg-[#E2B715]/70">Login</a>
+             <a href="signup.html" class="pl-3 pr-3 pt-2 pb-2 text-sm rounded-md border border-[#E2B715] hover:bg-[#E2B715]/70">Sign Up</a>
            </div>`;
     
     navbar.innerHTML = `
-      <header class="bg-slate-900/70 border-b border-slate-800">
+      <header class="bg-[#333437]/70 border-b border-slate-800">
         <div class="w-6xl px-4 py-3 flex items-center justify-between">
-          <a href="#home" class="text-lg font-semibold text-white">nanoType</a>
+          <a href="#home" class="text-lg font-semibold text-[#E2B715]">nanoType</a>
           <div class="flex items-center gap-6">
-            <nav class="hidden md:flex items-center gap-6 text-sm text-slate-300">
-              <a class="hover:text-white" href="#practice">Practice</a>
-              <a class="hover:text-white" href="#features">Features</a>
-              <a class="hover:text-white" href="#how_it_works">How it works</a>
-              <a class="hover:text-white" href="#faq">FAQ</a>
-              <a class="hover:text-white" href="leaderboard.html">Leaderboard</a>
+            <nav class="hidden md:flex items-center gap-6 text-sm text-[#E2B715]">
+              <a class="hover:text-[#E2B715]" href="#practice">Practice</a>
+              <a class="hover:text-[#E2B715]" href="#features">Features</a>
+              <a class="hover:text-[#E2B715]" href="#how_it_works">How it works</a>
+              <a class="hover:text-[#E2B715]" href="#faq">FAQ</a>
+              <a class="hover:text-[#E2B715]" href="leaderboard.html">Leaderboard</a>
             </nav>
             ${userNav}
           </div>
@@ -144,14 +144,14 @@ function Navbar(){
 function Banner(){
    const banner = document.getElementById('banner');
    banner.innerHTML = `
-      <section id="home" class="bg-gradient-to-b from-slate-800 to-slate-900">
+      <section id="home" class="bg-gradient-to-b from-[#3f4043] to-[#333437]">
         <div class="max-w-6xl mx-auto px-4 py-16 md:py-20 grid md:grid-cols-2 gap-10 items-center">
           <div>
-            <h1 class="text-5xl font-bold mb-4 text-white">Type faster. Type cleaner.</h1>
-            <p class="text-slate-300 text-lg mb-6">Measure your typing speed and accuracy. See leaderboard and get a chance to be there. Get Started Now</p>
+            <h1 class="text-5xl font-bold mb-4 text-[#E2B715]">Type faster. Type cleaner.</h1>
+            <p class="text-[#D1D0C5] text-lg mb-6">Measure your typing speed and accuracy. See leaderboard and get a chance to be there. Get Started Now</p>
             <div class="flex gap-3">
-              <a href="#practice" class="px-5 py-3 rounded-md bg-sky-600 text-white hover:bg-sky-700">Start practicing</a>
-              <a href="#features" class="px-5 py-3 rounded-md border border-slate-700 hover:bg-slate-800">Explore features</a>
+              <a href="#practice" class="px-5 py-3 rounded-md bg-[#D1D0C5] text-black">Start practicing</a>
+              <a href="#features" class="px-5 py-3 rounded-md border border-slate-700">Explore features</a>
             </div>
           </div>
           <div class="hidden md:block">
@@ -175,20 +175,20 @@ function Features() {
     ]
   
     const featuresHTML = features.map(item => {
-        return `<div class="p-5 rounded-xl bg-slate-800 shadow-sm rounded-sm bg-slate-700">
+        return `<div class="p-5 rounded-xl shadow-sm rounded-sm bg-[#2B2E30]">
         <div class="flex items-center mb-1">
-          <div class="font-semibold text-white">${item.title}</div>
+          <div class="font-semibold text-[#D1D0C5]">${item.title}</div>
         </div>
-        <div class="text-sm text-slate-400">${item.description}</div>
+        <div class="text-sm text-[#D1D0C5]">${item.description}</div>
       </div>`
     }).join('');
   
     const features_ = document.getElementById('features');
 
     features_.innerHTML = `
-      <section id="features" class="py-14 bg-slate-900/50">
+      <section id="features" class="py-14 bg-[#333437]/50">
         <div class="max-w-6xl mx-auto px-4">
-          <h2 class="text-2xl md:text-3xl font-bold mb-6 text-white">Features</h2>
+          <h2 class="text-2xl md:text-3xl font-bold mb-6 text-[#E2B715]">Features</h2>
           <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             ${featuresHTML}
           </div>
@@ -212,8 +212,8 @@ function HowItWorks() {
     howItWorks.innerHTML = `
       <section id="how" class="py-14">
         <div class="flex flex-col items-center px-4">
-          <h2 class="text-3xl font-bold mb-4 text-white">How it works</h2>
-          <ol class="list-decimal pl-5 space-y-3 text-slate-300">
+          <h2 class="text-3xl font-bold mb-4 text-[#E2B715]">How it works</h2>
+          <ol class="list-decimal pl-5 space-y-3 text-[#D1D0C5]">
             ${stepsHTML}
           </ol>
         </div>
@@ -231,18 +231,18 @@ function HowItWorks() {
   
     const faqHTML = faqs.map((item) => {
         return `
-            <div class="p-5 rounded-xl bg-slate-800">
-                <div class="font-medium mb-1 text-white">${item.que}</div>
-                <div class="text-sm text-slate-400">${item.ans}</div>
+            <div class="p-5 rounded-xl bg-[#2B2E30]">
+                <div class="font-medium mb-1 text-[#D1D0C5]">${item.que}</div>
+                <div class="text-sm text-[#D1D0C5]">${item.ans}</div>
             </div>
         `;
     }).join('');
   
     const faq = document.getElementById('faq');
     faq.innerHTML = `
-      <section id="faq" class="py-14 bg-slate-900/50">
+      <section id="faq" class="py-14 bg-[#333437]/50">
         <div class="max-w-6xl mx-auto px-4">
-          <h2 class="text-3xl font-bold mb-6 text-white">FAQ</h2>
+          <h2 class="text-3xl font-bold mb-6 text-[#E2B715]">FAQ</h2>
           <div class="grid md:grid-cols-2 gap-6">
             ${faqHTML}
           </div>
@@ -255,8 +255,8 @@ function HowItWorks() {
     const year = new Date().getFullYear();
     const footer = document.getElementById('footer');
     footer.innerHTML = `
-      <footer class="mt-16 border-t border-slate-800">
-        <div class="px-4 py-8 text-sm text-slate-400 flex flex-col md:flex-row items-center justify-between gap-3">
+      <footer class="mt-16 border-t border-[#D1D0C5]/40">
+        <div class="px-4 py-8 text-sm text-[#E2B715] flex flex-col md:flex-row items-center justify-between gap-3">
           <div>© ${year} Anmol Tuteja</div>
         </div>
       </footer>
@@ -295,7 +295,7 @@ function renderText(nano) {
   const states = nano.getState();
   const chars = nano.targetText.split('');
   const spans = chars.map((ch,idx) => {
-    let className = 'text-slate-400';
+    let className = 'text-[#D1D0C5]';
     if (states[idx] == constants.CORRECT) className = 'text-emerald-400';
     if (states[idx] == constants.INCORRECT) className = 'text-red-400 bg-red-900/20';
     if (states[idx] == constants.CURRENT) className = 'animate-pulse bg-sky-900/30';
@@ -308,18 +308,18 @@ function TypingSection(){
     const typing = document.getElementById('typing');
     const targetBlock = renderText(appState.nano);
     const stats = `
-      <div class="grid grid-cols-4 gap-3 text-sm text-slate-300">
-        <div class="p-3 rounded-lg bg-slate-800/50">
-          <div class="text-slate-400">WPM</div><div class="text-xl font-semibold text-white">${Math.round(appState.nano.wpm)}</div>
+      <div class="grid grid-cols-3 gap-3 text-sm">
+        <div class="p-3 rounded-lg bg-[#2B2E30]">
+          <div class="text-[#D1D0C5]">WPM</div><div class="text-xl font-semibold text-white">${Math.round(appState.nano.wpm)}</div>
         </div>
-        <div class="p-3 rounded-lg bg-slate-800/50">
-          <div class="text-slate-400">Accuracy</div><div class="text-xl font-semibold text-white">${appState.nano.accuracy.toFixed(0)}%</div>
+        <div class="p-3 rounded-lg bg-[#2B2E30]">
+          <div class="text-[#D1D0C5]">Accuracy</div><div class="text-xl font-semibold text-white">${appState.nano.accuracy.toFixed(0)}%</div>
         </div>
-        <div class="p-3 rounded-lg bg-slate-800/50">
-          <div class="text-slate-400">Time left</div>
+        <div class="p-3 rounded-lg bg-[#2B2E30]">
+          <div class="text-[#D1D0C5]">Time left</div>
           <div class="text-xl font-semibold text-white">${appState.timeLeft}s</div>
           <div class="mt-2 h-1.5 rounded-full bg-slate-700">
-            <div class="h-full bg-sky-500 rounded-full transition-width duration-200" style="width: ${(appState.timeLeft / appState.totalTime * 100).toFixed(2)}%"></div>
+            <div class="h-full bg-[#E2B715] rounded-full transition-width duration-200" style="width: ${(appState.timeLeft / appState.totalTime * 100).toFixed(2)}%"></div>
           </div>
         </div>
       </div>
@@ -330,27 +330,27 @@ function TypingSection(){
       const Wpm = Math.round(appState.nano.wpm);
       const Accuracy = `${appState.nano.accuracy.toFixed(0)}%`;
       main = `
-        <div class="p-6 rounded-xl bg-slate-800 shadow-sm text-center">
+        <div class="p-6 rounded-xl bg-[#2B2E30] shadow-sm text-center">
           <h2 class="text-2xl font-bold mb-4 text-white">Ended!</h2>
           <div class="grid grid-cols-2 gap-4 mb-6">
             <div>
-              <div class="text-slate-400">WPM</div>
+              <div class="text-[#D1D0C5]">WPM</div>
               <div class="text-3xl font-bold text-white">${Wpm}</div>
             </div>
             <div>
-              <div class="text-slate-400">Accuracy</div>
-              <div class="text-3xl font-boldtext-white">${Accuracy}</div>
+              <div class="text-[#D1D0C5]">Accuracy</div>
+              <div class="text-3xl font-bold text-white">${Accuracy}</div>
             </div>
           </div>
-          <button id="restart-btn" class="px-6 py-3 rounded-md bg-sky-600 text-white hover:bg-sky-700">Restart</button>
+          <button id="restart-btn" class="px-6 py-3 rounded-md bg-[#D1D0C5] text-black hover:bg-[#D1D0C5]">Restart</button>
         </div>
       `;
     } else {
       main = `
-        <textarea id="typing-input" class="w-full h-28 md:h-36 px-4 py-3 rounded-lg border border-slate-700 bg-slate-900 text-white placeholder-slate-400 resize-none focus:outline-none placeholder="Start typing here..."></textarea>
+        <textarea id="typing-input" class="w-full h-28 md:h-36 px-4 py-3 rounded-lg bg-[#333437] text-white placeholder-slate-400 resize-none focus:outline-none placeholder="Start typing here..."></textarea>
         <div class="mt-4 flex items-center gap-3">
-          <button id="start-btn" class="px-4 py-2 rounded-md bg-sky-600 text-white hover:bg-sky-700">Start</button>
-          <button id="reset-btn" class="px-4 py-2 rounded-md bg-slate-700 text-slate-200hover:bg-slate-600">Reset</button>
+          <button id="start-btn" class="px-4 py-2 rounded-md bg-[#D1D0C5] text-black hover:bg-[#D1D0C5]">Start</button>
+          <button id="reset-btn" class="px-4 py-2 rounded-md text-slate-200 border border-slate-700">Reset</button>
         </div>
       `;
     }
@@ -360,7 +360,7 @@ function TypingSection(){
         <div class="max-w-6xl mx-auto px-4">
           <div class="grid grid-cols-3 gap-6 items-start">
             <div class="col-span-2">
-              <div class="p-5 rounded-xl bg-slate-800 shadow-sm mb-4">
+              <div class="p-5 rounded-xl bg-[#2B2E30] shadow-sm mb-4">
                 <div class="mb-4">${targetBlock}</div>
                 ${main}
               </div>
