@@ -1,6 +1,5 @@
 const root = document.getElementById('root');
 
-
 const constants = {
     CORRECT : 'correct',
     INCORRECT : 'incorrect',
@@ -105,10 +104,10 @@ function Navbar(){
 
     const userNav = username ? 
     `<div class="flex items-center gap-3">
-             <a href="profile.html" class="flex items-center gap-2 pl-3 pr-3 pt-2 pb-2 text-sm rounded-md bg-slate-800 text-slate-200 hover:bg-slate-700">
-               <div class="w-8 h-8 bg-sky-500 rounded-full flex items-center justify-center text-white text-sm font-medium">
-                 ${username.charAt(0).toUpperCase()}
-               </div>
+             <a href="profile.html" class="flex items-center gap-2 pl-3 pr-3 pt-2 pb-2 text-sm rounded-md text-slate-200">
+               <img src="https://api.dicebear.com/9.x/bottts/svg?seed=${username}" 
+                    class="w-8 h-8 rounded-full border border-slate-700"
+                />
                <span>${username}</span>
              </a>
              <button id="logout-btn" class="pl-3 pr-3 pt-2 pb-2 text-sm rounded-md bg-sky-600 text-white hover:bg-sky-700">Logout</button>
@@ -462,7 +461,7 @@ function TimeUpdate(){
         clearInterval(appState.timerHandler);
         appState.timerHandler = null;
         
-        showSaveToHistory();
+        SaveToHistory();
         return;
     }
     appState.timeLeft = timeLeft;
@@ -475,17 +474,51 @@ function logout() {
     Navbar();
 }
 
-function showSaveToHistory() {
-    
+async function SaveToHistory() {
+    try {
+        const username = sessionStorage.getItem('username');
+        if (!username) return;
+        const user = await window.dbManager.getUser(username);
+        if(user){
+            const currTyping = {
+                wpm: appState.nano.wpm,
+                accuracy: appState.nano.accuracy,
+                timestamp: new Date().toISOString(),
+                duration: 60
+            }
+            
+            if (!user.history) {
+                user.history = [];
+            }
+            
+            user.history.push(currTyping);
+            await window.dbManager.updateUser(user);
+        }
+    }catch(err){
+        console.log(err);
+    }
 }
 
-function saveSessionToHistory() {
-   
+async function initApp() {
+    try {
+        await window.dbManager.init();
+        const username = sessionStorage.getItem('username');
+        if (username) {
+            currentUser = await window.dbManager.getUser(username);
+        }
+        App();
+        TypingSection();
+        Events();
+    } catch (err) {
+        console.log(err);
+        App();
+        TypingSection();
+        Events();
+    }
 }
-
 
 function initApp() {
-    App();
+   App();
    TypingEvents();
 }
 

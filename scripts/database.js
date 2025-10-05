@@ -94,7 +94,10 @@ class DatabaseManager {
     }
 }
 
-const dbManager = new DatabaseManager();
-dbManager.init()
-  .then(() => console.log("IndexedDB initialized"))
-  .catch((err) => console.error("DB init failed",err));
+window.dbManager = new DatabaseManager();
+
+window.dbManager.init().then(() => {
+    console.log('Database initialized successfully');
+}).catch((err) => {
+    console.error('Database initialization failed:',err);
+});
