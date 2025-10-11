@@ -156,7 +156,7 @@ function Banner(){
           </div>
           <div class="hidden md:block">
             <div class=" aspect-[16/9] rounded-2xl bg-slate-800 shadow-xl flex items-center justify-center">
-                <img src="../assests/banner.png" class="w-full h-full rounded-2xl" />
+                <img src="./assests/banner.png" class="w-full h-full rounded-2xl" />
             </div>
           </div>
         </div>
